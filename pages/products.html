@@ -71,7 +71,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/users.html">
+          <a class="nav-link  " href="../pages/customers.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -87,7 +87,27 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Users</span>
+            <span class="nav-link-text ms-1">Customers</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/orders.html">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+              <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>office</title>
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <g transform="translate(1716.000000, 291.000000)">
+                      <g id="office" transform="translate(153.000000, 2.000000)">
+                        <path class="color-background opacity-6" d="M12.25,17.5 L8.75,17.5 L8.75,1.75 C8.75,0.78225 9.53225,0 10.5,0 L31.5,0 C32.46775,0 33.25,0.78225 33.25,1.75 L33.25,12.25 L29.75,12.25 L29.75,3.5 L12.25,3.5 L12.25,17.5 Z"></path>
+                        <path class="color-background" d="M40.25,14 L24.5,14 C23.53225,14 22.75,14.78225 22.75,15.75 L22.75,38.5 L19.25,38.5 L19.25,22.75 C19.25,21.78225 18.46775,21 17.5,21 L1.75,21 C0.78225,21 0,21.78225 0,22.75 L0,40.25 C0,41.21775 0.78225,42 1.75,42 L40.25,42 C41.21775,42 42,41.21775 42,40.25 L42,15.75 C42,14.78225 41.21775,14 40.25,14 Z M12.25,36.75 L7,36.75 L7,33.25 L12.25,33.25 L12.25,36.75 Z M12.25,29.75 L7,29.75 L7,26.25 L12.25,26.25 L12.25,29.75 Z M35,36.75 L29.75,36.75 L29.75,33.25 L35,33.25 L35,36.75 Z M35,29.75 L29.75,29.75 L29.75,26.25 L35,26.25 L35,29.75 Z M35,22.75 L29.75,22.75 L29.75,19.25 L35,19.25 L35,22.75 Z"></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <span class="nav-link-text ms-1">Orders</span>
           </a>
         </li>
         <li class="nav-item">
@@ -343,8 +363,8 @@
           <div class="card mb-4">
             <div class="card-header" style="padding-top: 0;">
               <div class="dropdown">
-                <label for="categoryDropdown">Category</label>
-                <select id="categoryDropdown" class="form-select w-25 me-2 category-dropdown">
+                <label for="filterByCategory">Category</label>
+                <select id="filterByCategory" class="form-select w-25 me-2 category-dropdown">
                   <option value="">All Categories</option>
                 </select>
               </div>
@@ -380,41 +400,57 @@
 
 
       <!-- Modals -->
-  <!-- Add Product Modal -->
-  <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="addProductModalLabel">Add Product</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form id="addProductForm">
-            <div class="mb-3">
-              <label for="addProductName" class="form-label">Product Name</label>
-              <input type="text" id="addProductName" class="form-control" required />
+ <!-- Add Product Modal -->
+<div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addProductModalLabel">Add Product</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="addProductForm">
+          <!-- Add CSRF token if needed -->
+          <div class="mb-3">
+            <label for="addProductName" class="form-label">Product Name</label>
+            <input type="text" id="addProductName" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="addProductPrice" class="form-label">Price</label>
+            <input type="number" id="addProductPrice" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="addProductInventory" class="form-label">Inventory</label>
+            <input type="number" id="addProductInventory" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="addProductSlug" class="form-label">Slug</label>
+            <!-- Changed from number to text -->
+            <input type="text" id="addProductSlug" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="addProductImage" class="form-label">Product Image</label>
+            <input type="file" id="addProductImage" class="form-control" accept="image/*" required />
+            <!-- Thumbnail Preview -->
+            <div class="mt-2">
+              <img id="imagePreview" src="#" alt="Image Preview" class="img-thumbnail" style="max-width: 200px; display: none;">
             </div>
-            <div class="mb-3">
-              <label for="addProductPrice" class="form-label">Price</label>
-              <input type="number" id="addProductPrice" class="form-control" required />
-            </div>
-            <div class="mb-3">
-              <label for="addProductInventory" class="form-label">Inventory</label>
-              <input type="number" id="addProductInventory" class="form-control" required />
-            </div>
-            <div class="mb-3">
-              <label for="addProductCategory" class="form-label">Category</label>
-              <input type="text" id="addProductCategory" class="form-control" required />
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Add Product</button>
-          </form>
-        </div>
+          </div>
+          <div class="mb-3">
+            <label for="addCategoryProduct" class="form-label">Category</label>
+            <select id="addCategoryProduct" class="form-control" required>
+              <option value="">Loading categories...</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Add Product</button>
+        </form>
       </div>
     </div>
   </div>
+</div>
    <!-- Edit Product Modal -->
    <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="editProductModalLabel">Edit Product</h5>
@@ -436,8 +472,14 @@
               <input type="number" id="editProductInventory" class="form-control" required />
             </div>
             <div class="mb-3">
+              <label for="editProductSlug" class="form-label">Slug</label>
+              <input type="text" id="editProductSlug" class="form-control" required />
+            </div>
+            <div class="mb-3">
               <label for="editProductCategory" class="form-label">Category</label>
-              <input type="text" id="editProductCategory" class="form-control" required />
+              <select id="editProductCategory" class="form-control" required>
+                <option value="">Loading categories...</option>
+              </select>
             </div>
             <button type="submit" class="btn btn-primary w-100">Save Changes</button>
           </form>
