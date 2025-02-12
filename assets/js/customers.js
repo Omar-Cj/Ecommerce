@@ -20,8 +20,7 @@ const searchInput = document.getElementById("searchInput");
 const paginationControls = document.getElementById("paginationControls");
 const editCustomerForm = document.getElementById("editCustomerForm");
 const deleteCustomerConfirm = document.getElementById("deleteCustomerConfirm");
-const filterByMembershipDropdown =
-  document.getElementById("filterByMembership");
+const filterByMembershipDropdown = document.getElementById("filterByMembership");
 
 let currentPage = 1;
 let currentSort = "";
@@ -47,7 +46,7 @@ const fetchCustomers = async () => {
   try {
     let url = `${API_BASE_URL}?page=${currentPage}&search=${currentSearch}&ordering=${currentSort}`;
     if (currentMembership) {
-      url += `&membership=${currentMembership}`; // Filter customers by membership
+      url += `&membership=${currentMembership}`; // Append filter only if a membership is selected
     }
     const response = await fetchWithAuth(url);
     if (!response.ok) throw new Error("Failed to fetch customers");
@@ -60,6 +59,7 @@ const fetchCustomers = async () => {
     mergeCustomersWithUsers();
     renderCustomers();
     renderPagination(data);
+    // Do not call extractMemberships() here so the dropdown remains unchanged on every fetch
   } catch (error) {
     console.error("Error fetching customers:", error);
   }
@@ -103,10 +103,10 @@ const renderCustomers = () => {
       <td class="align-middle">
         <button class="btn btn-sm btn-primary me-2" onclick="openEditModal(${
           customer.id
-        })">Edit</button>
+        }, ${customer.user_id})">Edit</button>
         <button class="btn btn-sm btn-danger" onclick="openDeleteModal(${
           customer.id
-        })">Delete</button>
+        }, ${customer.user_id})">Delete</button>
       </td>
     `;
     customerTableBody.appendChild(row);
@@ -186,6 +186,31 @@ const sortColumn = (column) => {
   fetchCustomers();
 };
 
+// --- Membership Filtering Setup ---
+// Call this once on page load to populate the dropdown
+const extractMemberships = () => {
+  const validMemberships = ["Gold", "Silver", "Bronze"];
+  renderMembershipDropdown(validMemberships);
+};
+
+const renderMembershipDropdown = (memberships) => {
+  filterByMembershipDropdown.innerHTML = '<option value="">All Customers</option>';
+  memberships.forEach((membership) => {
+    const option = document.createElement("option");
+    option.value = membership;
+    option.textContent = membership;
+    filterByMembershipDropdown.appendChild(option);
+  });
+};
+
+// Listen for changes on the membership dropdown.
+// When "All Customers" is selected (empty value), no membership filter is applied.
+filterByMembershipDropdown.addEventListener("change", (event) => {
+  currentMembership = event.target.value; // if empty, fetch all customers
+  currentPage = 1;
+  fetchCustomers();
+});
+
 searchInput.addEventListener("input", (event) => {
     currentSearch = event.target.value;
     currentPage = 1;
@@ -193,15 +218,17 @@ searchInput.addEventListener("input", (event) => {
   });
 
 // Open Edit Modal
-const openEditModal = (id) => {
-  const customer = customers.find((c) => c.id === id);
+const openEditModal = (customerId,userId) => {
+  const customer = customers.find((c) => c.id === customerId);
   if (!customer) return;
 
-  document.getElementById("editCustomerId").value = id;
+  document.getElementById("editCustomerId").value = customerId;
+  document.getElementById("editUserId").value = userId;
   document.getElementById("editCustomerFirstName").value = customer.first_name;
   document.getElementById("editCustomerLastName").value = customer.last_name;
   document.getElementById("editCustomerPhone").value = customer.phone;
   document.getElementById("editCustomerEmail").value = customer.email;
+  // document.getElementById("editCustomerMembership").value = customer.membership;
 
   const modal = new bootstrap.Modal(
     document.getElementById("editCustomerModal")
@@ -209,26 +236,62 @@ const openEditModal = (id) => {
   modal.show();
 };
 
-const openDeleteModal = (id) => {
+// Handle Edit Form Submission
+editCustomerForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const customerId = document.getElementById("editCustomerId").value;
+  const userId = document.getElementById("editUserId").value;
+
+  // Data for Users Endpoint
+  const userData = {
+    first_name: document.getElementById("editCustomerFirstName").value,
+    last_name: document.getElementById("editCustomerLastName").value,
+    email: document.getElementById("editCustomerEmail").value,
+  };
+
+  // Data for Customers Endpoint
+  const customerData = {
+    phone: document.getElementById("editCustomerPhone").value,
+    // membership: document.getElementById("editCustomerMembership").value,
+  };
+
+  try {
+    // Update user data
+    await fetchWithAuth(`${USERS_API_URL}${userId}/`, {
+      method: "PUT",
+      body: JSON.stringify(userData),
+    });
+
+    // Update customer data
+    await fetchWithAuth(`${API_BASE_URL}${customerId}/`, {
+      method: "PUT",
+      body: JSON.stringify(customerData),
+    });
+
+    fetchCustomers();
+    bootstrap.Modal.getInstance(document.getElementById("editCustomerModal")).hide();
+  } catch (error) {
+    console.error("Error updating customer:", error);
+  }
+});
+
+// Delete Customer
+const openDeleteModal = (id,userId) => {
   deleteCustomerConfirm.onclick = async () => {
     try {
-      const response = await fetchWithAuth(`${API_BASE_URL}${id}/`, {
-        method: "DELETE",
-      });
-      if (!response.ok) throw new Error("Failed to Delete Customer");
+      await fetchWithAuth(`${API_BASE_URL}${id}/`, { method: "DELETE" });
       fetchCustomers();
-      bootstrap.Modal.getInstance(
-        document.getElementById("deleteCustomerModal").hide()
-      );
+      bootstrap.Modal.getInstance(document.getElementById("deleteCustomerModal")).hide();
     } catch (error) {
-      console.error("Error deleting customer", error);
+      console.error("Error deleting customer:", error);
     }
   };
-  const modal = new bootstrap.Modal(
-    document.getElementById("deleteCustomerModal")
-  );
+
+  const modal = new bootstrap.Modal(document.getElementById("deleteCustomerModal"));
   modal.show();
 };
 
 // Initial Fetch
 fetchCustomers();
+extractMemberships()
