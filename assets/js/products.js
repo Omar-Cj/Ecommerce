@@ -256,16 +256,13 @@ addCategoryForm.addEventListener("submit", async (event) => {
       document.getElementById("addProductImage").files[0]
     );
 
-    const imageResponse = await fetch(
-      `${API_BASE_URL}${newProduct.id}/images/`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `JWT ${token}`,
-        },
-        body: imageFormData,
-      }
-    );
+    const imageResponse = await fetch(`${API_BASE_URL}${newProduct.id}/img/`, {
+      method: "POST",
+      headers: {
+        Authorization: `JWT ${token}`,
+      },
+      body: imageFormData,
+    });
 
     if (!imageResponse.ok) throw new Error("Image upload failed");
 
