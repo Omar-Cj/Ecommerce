@@ -2,7 +2,7 @@
   "name": "soft-ui-dashboard",
   "version": "1.1.0",
   "description": "Freebie Dashboard for Bootstrap 5",
-  "main": "pages/dashboard.html",
+  "main": "index.html",
   "type": "module",
   "directories": {
     "example": "root"
