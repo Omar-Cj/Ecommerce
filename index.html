@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Red store | Ecommerce Website Design</title>
+    <title>Red Store | Ecommerce Website Design</title>
     <link rel="stylesheet" href="assets/css/homepage.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap"
@@ -13,6 +13,37 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <style>
+      /* Dropdown styles for categories in the navigation */
+      .navbar ul li.dropdown {
+        position: relative;
+      }
+      .navbar ul li.dropdown .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 180px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        top: 100%;
+        left: 0;
+      }
+      .navbar ul li.dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .dropdown-content li {
+        display: block;
+        padding: 8px 12px;
+      }
+      .dropdown-content li a {
+        color: var(--main-text-color);
+        text-decoration: none;
+        display: block;
+      }
+      .dropdown-content li a:hover {
+        background-color: #f1f1f1;
+      }
+    </style>
   </head>
   <body>
     <div class="header">
@@ -20,22 +51,27 @@
         <div class="navbar">
           <div class="logo">
             <a href="index.html">
-              <img src="assets/img/logo.png" alt="" width="125px"
-            /></a>
+              <img src="assets/img/logo.png" alt="" width="125px" />
+            </a>
           </div>
           <nav>
             <ul id="MenuItems">
               <li><a href="index.html">Home</a></li>
+              <li class="dropdown">
+                <a href="#">Categories <i class="fa fa-caret-down"></i></a>
+                <ul class="dropdown-content" id="categories-list">
+                  <!-- Dynamic categories will be inserted here -->
+                </ul>
+              </li>
               <li><a href="">Products</a></li>
               <li><a href="">About</a></li>
               <li><a href="">Contact</a></li>
               <li><a href="">Account</a></li>
-              <!-- TODo: 22:20 -->
             </ul>
           </nav>
-          <a href=""
-            ><img src="assets/img/cart.png" alt="" width="30px" height="30px"
-          /></a>
+          <a href="">
+            <img src="assets/img/cart.png" alt="" width="30px" height="30px" />
+          </a>
           <img
             src="assets/img/menu.png"
             alt=""
@@ -46,33 +82,21 @@
         <div class="row">
           <div class="col-2">
             <h1>
-              Give your Workout<br />
-              a new Style!
+              Discover Amazing Deals<br />
+              Shop the Latest Trends!
             </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />
-              Voluptas rerum maiores animi officiis
+              Find the best products handpicked just for you. Enjoy unbeatable
+              prices and exclusive offers.
             </p>
-            <a href="" class="btn">Explore Now &#8594;</a>
+            <a href="" class="btn">Shop Now &#8594;</a>
           </div>
           <div class="col-2">
-            <img src="assets/img/image1.png" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <!----- Featurd Categories--------->
-    <div class="categories">
-      <div class="small-container">
-        <div class="row">
-          <div class="col-3">
-            <img src="assets/img/category-1.jpg" alt="" />
-          </div>
-          <div class="col-3">
-            <img src="assets/img/category-2.jpg" alt="" />
-          </div>
-          <div class="col-3">
-            <img src="assets/img/category-3.jpg" alt="" />
+            <!-- Updated hero banner image -->
+            <img
+              src="assets/img/ecommerce-banner.jpg"
+              alt="Stunning E-commerce Banner"
+            />
           </div>
         </div>
       </div>
@@ -82,9 +106,7 @@
       <h2 class="title">Featured Products</h2>
       <div class="row">
         <div class="col-4">
-          <a href="">
-            <img src="assets/img/product-1.jpg" alt=""
-          /></a>
+          <a href=""> <img src="assets/img/product-1.jpg" alt="" /></a>
           <h4>Red Printed T-shirt</h4>
           <div class="rating">
             <i class="fa fa-star"></i>
@@ -395,8 +417,9 @@
         <p class="copyright" id="copyright-text">Copyright 2020 - introidx</p>
       </div>
     </div>
-    
+
     <!-- scripts -->
     <script src="assets/js/toggleMenu.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
