@@ -1,6 +1,7 @@
 // products.js
 
-const API_BASE_URL = "http://localhost:8000/store/products/";
+const API_BASE_URL =
+  "https://suuqcasri-prod-b2dbb1ea4f1e.herokuapp.com/store/products/";
 const token = localStorage.getItem("accessToken"); // Retrieve access token
 
 // Utility: Fetch with Authorization Header
@@ -39,7 +40,7 @@ let categoriesCache = [];
 const fetchCategories = async () => {
   try {
     const response = await fetchWithAuth(
-      "http://localhost:8000/store/collections/"
+      "https://suuqcasri-prod-b2dbb1ea4f1e.herokuapp.com/store/collections/"
     ); // Replace with your categories endpoint
     if (!response.ok) throw new Error("Failed to fetch categories");
     const categories = await response.json();

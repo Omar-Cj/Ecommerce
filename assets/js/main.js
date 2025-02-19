@@ -13,7 +13,7 @@
   };
 
   // Fetch categories from the backend API and populate the menu
-  fetch("http://localhost:8000/store/collections/")
+  fetch("https://suuqcasri-prod-b2dbb1ea4f1e.herokuapp.com/store/collections/")
     .then((response) => response.json())
     .then((data) => {
       const categoriesList = document.getElementById("categories-list");
