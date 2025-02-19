@@ -46,6 +46,7 @@
     </style>
   </head>
   <body>
+    <!-- Header / Navigation -->
     <div class="header">
       <div class="container">
         <div class="navbar">
@@ -92,37 +93,24 @@
             <a href="" class="btn">Shop Now &#8594;</a>
           </div>
           <div class="col-2">
-            <!-- Updated hero banner image -->
+            <!-- Updated hero banner image (replace with your stunning image) -->
             <img
-              src=""
+              src="assets/img/ecommerce-banner.jpg"
               alt="Stunning E-commerce Banner"
             />
           </div>
         </div>
       </div>
     </div>
-       <!----- Featurd Categories--------->
-       <div class="categories">
-        <div class="small-container">
-          <div class="row">
-            <div class="col-3">
-              <img src="assets/img/category-1.jpg" alt="" />
-            </div>
-            <div class="col-3">
-              <img src="assets/img/category-2.jpg" alt="" />
-            </div>
-            <div class="col-3">
-              <img src="assets/img/category-3.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    <!----- Featurd Products--------->
+
+    <!-- Featured Products Section (Static) -->
     <div class="small-container">
       <h2 class="title">Featured Products</h2>
       <div class="row">
         <div class="col-4">
-          <a href=""> <img src="assets/img/product-1.jpg" alt="" /></a>
+          <a href="">
+            <img src="assets/img/product-1.jpg" alt="" />
+          </a>
           <h4>Red Printed T-shirt</h4>
           <div class="rating">
             <i class="fa fa-star"></i>
@@ -172,114 +160,15 @@
           <p>$50.00</p>
         </div>
       </div>
-      <h2 class="title">Electronic Products</h2>
-      <div class="row">
-        <div class="col-4">
-          <img src="assets/img/product-5.jpg" alt="" />
-          <h4>Red Printed T-shirt</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$50.00</p>
-        </div>
 
-        <div class="col-4">
-          <img src="assets/img/product-6.jpg" alt="" />
-          <h4>Red Printed T-shirt</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$50.00</p>
-        </div>
-
-        <div class="col-4">
-          <img src="assets/img/product-7.jpg" alt="" />
-          <h4>Red Printed T-shirt</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-          </div>
-          <p>$50.00</p>
-        </div>
-        <div class="col-4">
-          <img src="assets/img/product-8.jpg" alt="" />
-          <h4>Red Printed T-shirt</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$50.00</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <img src="assets/img/product-9.jpg" alt="" />
-          <h4>Red Printed T-shirt</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$50.00</p>
-        </div>
-
-        <div class="col-4">
-          <img src="assets/img/product-10.jpg" alt="" />
-          <h4>Red Printed T-shirt</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$50.00</p>
-        </div>
-
-        <div class="col-4">
-          <img src="assets/img/product-11.jpg" alt="" />
-          <h4>Red Printed T-shirt</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-          </div>
-          <p>$50.00</p>
-        </div>
-        <div class="col-4">
-          <img src="assets/img/product-12.jpg" alt="" />
-          <h4>Red Printed T-shirt</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-          <p>$50.00</p>
-        </div>
+      <!-- Fashion Products Section (Dynamic Data; structure/design preserved) -->
+      <h2 class="title">Fashion Products</h2>
+      <div class="row" id="fashion-products">
+        <!-- Dynamic fashion products will be loaded here without altering the design -->
       </div>
     </div>
 
-    <!-------- Offer --------->
+    <!-- Offer Section -->
     <div class="offer">
       <div class="small-container">
         <div class="row">
@@ -289,9 +178,9 @@
           <div class="col-2">
             <p>Exclusively available on RedStore</p>
             <h1>Smart Band 4</h1>
-            <small
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Excepturi rerum maiores eveniet minus ut deserunt vitae
+            <small>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+              rerum maiores eveniet minus ut deserunt vitae
             </small>
             <a href="" class="btn">Buy Now &#8594;</a>
           </div>
@@ -299,13 +188,12 @@
       </div>
     </div>
 
-    <!------ Testimonial  ------>
+    <!-- Testimonial Section -->
     <div class="testimonial">
       <div class="small-container">
         <div class="row">
           <div class="col-3">
             <i class="fa fa-quote-left"></i>
-
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, esse
               quae ex sequi praesentium fuga voluptatem placeat voluptates odio
@@ -324,7 +212,6 @@
 
           <div class="col-3">
             <i class="fa fa-quote-left"></i>
-
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, esse
               quae ex sequi praesentium fuga voluptatem placeat voluptates odio
@@ -343,7 +230,6 @@
 
           <div class="col-3">
             <i class="fa fa-quote-left"></i>
-
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, esse
               quae ex sequi praesentium fuga voluptatem placeat voluptates odio
@@ -363,8 +249,7 @@
       </div>
     </div>
 
-    <!-- Brands -->
-
+    <!-- Brands Section -->
     <div class="brands">
       <div class="small-container">
         <div class="row">
@@ -387,7 +272,7 @@
       </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <div class="footer">
       <div class="container">
         <div class="row">
@@ -433,7 +318,6 @@
         <p class="copyright" id="copyright-text">Copyright 2020 - introidx</p>
       </div>
     </div>
-
     <!-- scripts -->
     <script src="assets/js/toggleMenu.js"></script>
     <script src="assets/js/main.js"></script>

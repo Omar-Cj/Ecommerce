@@ -35,3 +35,45 @@
     .catch((error) => {
       console.error("Error fetching categories:", error);
     });
+
+
+ // Fetch and update the Fashion Products section while preserving the design
+ fetch("https://suuqcasri-prod-b2dbb1ea4f1e.herokuapp.com/store/products/?collection_id=10")
+ .then(response => response.json())
+ .then(data => {
+   const container = document.getElementById("fashion-products");
+   // Clear any existing content (if any)
+   container.innerHTML = "";
+   data.results.forEach(product => {
+     // Use the first available image or fallback to a placeholder
+     const imageSrc =
+       product.images && product.images.length > 0
+         ? product.images[0].image
+         : "assets/img/product-1.jpg";
+     // Calculate discounted price if discount is provided
+     const price = product.unit_price;
+     const discountedPrice =
+       product.discount && product.discount > 0
+         ? (price - (price * product.discount) / 100).toFixed(2)
+         : price.toFixed(2);
+     // Build the product block using the existing design structure
+     const productHTML = `
+       <div class="col-4">
+         <img src="${imageSrc}" alt="${product.title}" />
+         <h4>${product.title}</h4>
+         <div class="rating">
+           <i class="fa fa-star"></i>
+           <i class="fa fa-star"></i>
+           <i class="fa fa-star"></i>
+           <i class="fa fa-star"></i>
+           <i class="fa fa-star-o"></i>
+         </div>
+         <p>$${discountedPrice}</p>
+       </div>
+     `;
+     container.insertAdjacentHTML("beforeend", productHTML);
+   });
+ })
+ .catch(error => {
+   console.error("Error fetching fashion products:", error);
+ });

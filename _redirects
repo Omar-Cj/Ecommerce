@@ -1,0 +1,2 @@
+# Proxy all requests to /api/* to your Heroku backend
+/api/*  https://suuqcasri-prod-b2dbb1ea4f1e.herokuapp.com/:splat  200
