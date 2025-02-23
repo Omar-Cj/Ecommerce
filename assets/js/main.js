@@ -13,7 +13,7 @@
   };
 
   // Fetch categories from the backend API and populate the menu
-  fetch("https://suuqcasri-prod-b2dbb1ea4f1e.herokuapp.com/store/collections/")
+  fetch("https://suuqcasri-production-839407217d71.herokuapp.com/store/collections/")
     .then((response) => response.json())
     .then((data) => {
       const categoriesList = document.getElementById("categories-list");
