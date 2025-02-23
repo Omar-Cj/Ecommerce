@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const password = document.getElementById('password').value;
   
       try {
-        const response = await fetch('https://suuqcasri-prod-b2dbb1ea4f1e.herokuapp.com/auth/jwt/create', {
+        const response = await fetch('https://suuqcasri-production-839407217d71.herokuapp.com/auth/jwt/create', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

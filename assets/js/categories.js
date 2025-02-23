@@ -1,6 +1,6 @@
 // categories.js
 
-const API_BASE_URL = "https://suuqcasri-prod-b2dbb1ea4f1e.herokuapp.com/store/collections/";
+const API_BASE_URL = "https://suuqcasri-production-839407217d71.herokuapp.com/store/collections/";
 const token = localStorage.getItem("accessToken");
 
 // Utility: Fetch with Authorization Header

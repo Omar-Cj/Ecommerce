@@ -1,5 +1,5 @@
-const API_BASE_URL = "http://localhost:8000/store/orders/";
-const USERS_API_URL = "http://localhost:8000/auth/users/";
+const API_BASE_URL = "https://suuqcasri-production-839407217d71.herokuapp.com/store/orders/";
+const USERS_API_URL = "https://suuqcasri-production-839407217d71.herokuapp.com/auth/users/";
 const token = localStorage.getItem("accessToken");
 
 // Utility: Fetch with Authorization Header

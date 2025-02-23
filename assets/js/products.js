@@ -1,7 +1,7 @@
 // products.js
 
 const API_BASE_URL =
-  "https://suuqcasri-prod-b2dbb1ea4f1e.herokuapp.com/store/products/";
+  "https://suuqcasri-production-839407217d71.herokuapp.com/store/products/";
 const token = localStorage.getItem("accessToken"); // Retrieve access token
 
 // Utility: Fetch with Authorization Header

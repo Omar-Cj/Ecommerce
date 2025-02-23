@@ -38,7 +38,7 @@
 
 
  // Fetch and update the Fashion Products section while preserving the design
- fetch("https://suuqcasri-prod-b2dbb1ea4f1e.herokuapp.com/store/products/?collection_id=10")
+ fetch("https://suuqcasri-production-839407217d71.herokuapp.com/store/products/?collection_id=10")
  .then(response => response.json())
  .then(data => {
    const container = document.getElementById("fashion-products");
