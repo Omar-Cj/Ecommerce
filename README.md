@@ -1,4 +1,4 @@
-# [Soft UI Dashboard 3](http://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html?ref=readme-sud) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https://www.creative-tim.com/product/soft-ui-dashboard&text=Check%20Soft%20UI%20Dashboard%20made%20by%20@CreativeTim%20#webdesign%20#dashboard%20#softdesign%20#html%20https://www.creative-tim.com/product/soft-ui-dashboard) [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/FhCJCaHdQa)
+# [Soft UI Dashboard 3](http://demos.creative-tim.com/soft-ui-dashboard/admin/dashboard.html?ref=readme-sud) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https://www.creative-tim.com/product/soft-ui-dashboard&text=Check%20Soft%20UI%20Dashboard%20made%20by%20@CreativeTim%20#webdesign%20#dashboard%20#softdesign%20#html%20https://www.creative-tim.com/product/soft-ui-dashboard) [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/FhCJCaHdQa)
 
 ![version](https://img.shields.io/badge/version-1.1.0-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/soft-ui-dashboard.svg)](https://github.com/creativetimofficial/soft-ui-dashboard/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/soft-ui-dashboard.svg)](https://github.com/creativetimofficial/soft-ui-dashboard/issues?q=is%3Aissue+is%3Aclosed)
 
@@ -30,7 +30,7 @@ You can read more about the <a href="https://www.creative-tim.com/learning-lab/b
 If you want to get inspiration or just show something directly to your clients,
 you can jump start your development with our pre-built example pages. You will be able
 to quickly set up the basic structure for your web project.
-View <a href="https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html" target="_blank">example pages here</a>.
+View <a href="https://demos.creative-tim.com/soft-ui-dashboard/admin/dashboard.html" target="_blank">example pages here</a>.
 
 **HELPFUL LINKS**
 
@@ -39,7 +39,9 @@ View <a href="https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.h
 - Check <a href="https://www.creative-tim.com/faq" target="_blank">FAQ Page</a>
 
 #### Special thanks
+
 During the development of this dashboard, we have used many existing resources from awesome developers. We want to thank them for providing their tools open source:
+
 - [Bootstrap 5](https://www.getbootstrap.com)- Open source front end framework
 - [Popper.js](https://popper.js.org/) - Kickass library used to manage poppers
 - [Nepcha Analytics](https://nepcha.com?ref=readme) for the analytics tool. Nepcha is already integrated with Soft UI Dashboard. You can use it to gain insights into your sources of traffic.
@@ -48,8 +50,7 @@ Let us know your thoughts below. And good luck with development!
 
 ## Table of Contents
 
-- [Soft UI Dashboard  ](#soft-ui-dashboard--)
-      - [Special thanks](#special-thanks)
+- [Soft UI Dashboard ](#soft-ui-dashboard--) - [Special thanks](#special-thanks)
   - [Table of Contents](#table-of-contents)
   - [Versions](#versions)
   - [Demo](#demo)
@@ -63,24 +64,24 @@ Let us know your thoughts below. And good luck with development!
   - [Reporting Issues](#reporting-issues)
   - [Technical Support or Questions](#technical-support-or-questions)
   - [Licensing](#licensing)
-  - [Useful Links](#useful-links)
-        - [Social Media](#social-media)
+  - [Useful Links](#useful-links) - [Social Media](#social-media)
 
 ## Versions
 
 [<img src="https://s3.amazonaws.com/creativetim_bucket/github/html.png" width="60" height="60" />](https://www.creative-tim.com/product/soft-ui-dashboard?ref=readme-sud)
 
 | HTML |
-| --- |
-| [![Soft UI Dashboard HTML](https://s3.amazonaws.com/creativetim_bucket/products/450/thumb/opt_sd_free_thumbnail.jpg?1617715816)](http://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html?ref=readme-sud)
+| ---- |
+
+| [![Soft UI Dashboard HTML](https://s3.amazonaws.com/creativetim_bucket/products/450/thumb/opt_sd_free_thumbnail.jpg?1617715816)](http://demos.creative-tim.com/soft-ui-dashboard/admin/dashboard.html?ref=readme-sud)
 
 ## Demo
 
-- [Profile page](http://demos.creative-tim.com/soft-ui-dashboard/pages/profile.html?ref=readme-sud)
-- [Sign in page](http://demos.creative-tim.com/soft-ui-dashboard/pages/sign-in.html?ref=readme-sud)
-- [Sign up page](https://demos.creative-tim.com/soft-ui-dashboard/pages/sign-up.html?ref=readme-sud)
+- [Profile page](http://demos.creative-tim.com/soft-ui-dashboard/admin/profile.html?ref=readme-sud)
+- [Sign in page](http://demos.creative-tim.com/soft-ui-dashboard/admin/sign-in.html?ref=readme-sud)
+- [Sign up page](https://demos.creative-tim.com/soft-ui-dashboard/admin/sign-up.html?ref=readme-sud)
 
-[View More](https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html?ref=readme-sud).
+[View More](https://demos.creative-tim.com/soft-ui-dashboard/admin/dashboard.html?ref=readme-sud).
 
 ## Quick start
 
@@ -100,6 +101,7 @@ Quick start options:
 [![Deploy to Genezio](https://raw.githubusercontent.com/Genez-io/graphics/main/svg/deploy-button.svg)](https://app.genez.io/start/deploy?repository=https://github.com/creativetimofficial/soft-ui-dashboard&utm_source=github&utm_medium=referral&utm_campaign=github-creativetim&utm_term=deploy-project&utm_content=button-head)
 
 ## Documentation
+
 The documentation for the Soft UI Dashboard is hosted at our [website](https://www.creative-tim.com/learning-lab/bootstrap/overview/soft-ui-dashboard?ref=readme-sud).
 
 ### What's included
@@ -136,7 +138,8 @@ At present, we officially aim to support the last two versions of the following 
 <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
 
 ## Resources
-- [Live Preview](https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html?ref=readme-sud)
+
+- [Live Preview](https://demos.creative-tim.com/soft-ui-dashboard/admin/dashboard.html?ref=readme-sud)
 - [Download Page](https://www.creative-tim.com/product/soft-ui-dashboard?ref=readme-sud)
 - Documentation is [here](https://www.creative-tim.com/learning-lab/bootstrap/overview/soft-ui-dashboard?ref=readme-sud)
 - [License Agreement](https://www.creative-tim.com/license?ref=readme-sud)
@@ -145,6 +148,7 @@ At present, we officially aim to support the last two versions of the following 
 - [Nepcha Analytics](https://nepcha.com?ref=readme) - Analytics tool for your website
 
 ## Reporting Issues
+
 We use GitHub Issues as the official bug tracker for the Soft UI Dashboard. Here are some advices for our users that want to report an issue:
 
 1. Make sure that you are using the latest version of the Soft UI Dashboard. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/product/soft-ui-dashboard?ref=readme-sud).

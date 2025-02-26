@@ -3,6 +3,6 @@
 
 // // Task to open the browser
 // gulp.task('open-app', function(){
-//   gulp.src('pages/dashboard.html')
+//   gulp.src('admin/dashboard.html')
 //   .pipe(open());
 // });

@@ -33,14 +33,14 @@ let products = [];
 let pageSize = 10;
 let currentCategory = ""; // Track the selected category
 
-// Add global categories cache
+// Add global categories cache  
 let categoriesCache = [];
 
 // Fetch Categories
 const fetchCategories = async () => {
   try {
     const response = await fetchWithAuth(
-      "https://suuqcasri-prod-b2dbb1ea4f1e.herokuapp.com/store/collections/"
+      "https://suuqcasri-production-839407217d71.herokuapp.com/store/collections/"
     ); // Replace with your categories endpoint
     if (!response.ok) throw new Error("Failed to fetch categories");
     const categories = await response.json();
