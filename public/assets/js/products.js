@@ -111,7 +111,7 @@ const renderProducts = () => {
       <td>
         <div class="d-flex px-2 py-1 product-image-container">
             <div>
-            <img src="../public/assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
+            <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
             </div>
              <p class="text-xs font-weight-bold mb-0">${product.title}</p>
         </div>

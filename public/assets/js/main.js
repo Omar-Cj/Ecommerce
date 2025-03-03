@@ -52,7 +52,7 @@ fetch(
       const imageSrc =
         product.images && product.images.length > 0
           ? product.images[0].image
-          : "public/assets/img/product-1.jpg";
+          : "assets/img/product-1.jpg";
       // Calculate discounted price if discount is provided
       const price = product.unit_price;
       const discountedPrice =

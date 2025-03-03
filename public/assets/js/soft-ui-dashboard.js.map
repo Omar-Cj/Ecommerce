@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": [
-    "_site_dashboard_free/public/assets/js/dashboard-free.js"
+    "_site_dashboard_free/assets/js/dashboard-free.js"
   ],
   "names": [
     "sidebar",
