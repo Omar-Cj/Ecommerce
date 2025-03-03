@@ -7,12 +7,15 @@
   "directories": {
     "example": "root"
   },
-  "scripts": {
-    "open-app": "gulp open-app",
-    "start": "npm run open-app",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "gulp-watch"
-  },
+"scripts": {
+  "open-app": "gulp open-app",
+  "start": "npm run open-app",
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "watch": "gulp-watch",
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/creativetimofficial/soft-ui-dashboard.git"
@@ -41,7 +44,8 @@
     "gulp": "5.0.0",
     "gulp-open": "3.0.1",
     "parcel-bundler": "^1.12.5",
-    "sass": "1.80.2"
+    "sass": "1.80.2",
+    "vite": "^6.2.0"
   },
   "homepage": "http://creative-tim.com/product/soft-ui-dashboard",
   "dependencies": {
