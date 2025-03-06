@@ -59,7 +59,7 @@ fetch(
       
       // Wrapping the product content in a clickable div that redirects with the product id in the URL
       const productHTML = `
-        <div class="col-4 product-details-container" onclick="window.location.href='product-details.html?productId=${product.id}'">
+        <div class="col-4 product-details-container" onclick="window.location.href='pages/product-details.html?productId=${product.id}'">
           <img src="${imageSrc}" alt="${product.title}" />
           <h4>${product.title}</h4>
           <div class="rating">
