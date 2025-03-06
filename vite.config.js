@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import { resolve, basename } from 'path'
-import glob from 'glob'
+import { globSync } from 'glob'
 
 // Custom plugin to rewrite "/admin" to "/admin/index.html"
 function adminIndexFallback() {
@@ -20,7 +20,7 @@ function adminIndexFallback() {
 // Helper function to grab all HTML files from a given folder
 function getHtmlInputs(folder) {
   const pattern = resolve(__dirname, `${folder}/*.html`)
-  const files = glob.sync(pattern)
+  const files = globSync(pattern)
   return files.reduce((acc, filePath) => {
     // Use folder name and file basename (without extension) to form a key.
     const name = basename(filePath, '.html')
