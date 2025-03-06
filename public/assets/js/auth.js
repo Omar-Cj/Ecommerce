@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('accessToken', accessToken);
   
         // Redirect to the dashboard
-        window.location.href = 'admin/dashboard.html';
+        window.location.href = 'dashboard.html';
       } catch (error) {
         errorMessage.textContent = error.message;
         errorMessage.style.display = 'block';
