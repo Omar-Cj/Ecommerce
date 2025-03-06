@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Products - Red store</title>
+    <title>Product Details - Red Store</title>
     <link rel="stylesheet" href="./assets/css/homepage.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap"
@@ -20,8 +20,8 @@
       <div class="navbar">
         <div class="logo">
           <a href="index.html">
-            <img src="assets/img/logo.png" alt="" width="125px"
-          /></a>
+            <img src="assets/img/logo.png" alt="" width="125px" />
+          </a>
         </div>
         <nav>
           <ul id="MenuItems">
@@ -30,12 +30,11 @@
             <li><a href="">About</a></li>
             <li><a href="">Contact</a></li>
             <li><a href="account.html">Account</a></li>
-            <!-- TODo: 22:20 -->
           </ul>
         </nav>
-        <a href="cart.html"
-          ><img src="assets/img/cart.png" alt="" width="30px" height="30px"
-        /></a>
+        <a href="cart.html">
+          <img src="assets/img/cart.png" alt="" width="30px" height="30px" />
+        </a>
         <img
           src="assets/img/menu.png"
           alt=""
@@ -45,53 +44,42 @@
       </div>
     </div>
 
-    <!-- Single Products Detail -->
+    <!-- Single Product Detail -->
     <div class="small-container single-product">
       <div class="row">
         <div class="col-2">
+          <!-- Main Product Image (will be updated dynamically) -->
           <img src="assets/img/gallery-1.jpg" width="100%" id="ProductImg" />
-
-          <div class="small-img-row">
-            <div class="small-img-col">
-              <img src="assets/img/gallery-1.jpg" class="small-img" />
-            </div>
-            <div class="small-img-col">
-              <img src="assets/img/gallery-2.jpg" class="small-img" />
-            </div>
-            <div class="small-img-col">
-              <img src="assets/img/gallery-3.jpg" class="small-img" />
-            </div>
-            <div class="small-img-col">
-              <img src="assets/img/gallery-4.jpg" class="small-img" />
-            </div>
+          <div class="small-img-row" id="galleryRow">
+            <!-- Gallery thumbnails will be injected here dynamically -->
           </div>
         </div>
         <div class="col-2">
+          <!-- Breadcrumb can be updated dynamically if needed -->
           <p>Home / T-shirt</p>
-          <h2>Red Printed T-Shirt By HRX</h2>
-          <h4>$50.00</h4>
-          <select name="" id="">
+          <!-- Dynamic Product Title -->
+          <h2 id="productTitle"></h2>
+          <!-- Dynamic Product Price -->
+          <h4 id="productPrice"></h4>
+          <select name="" id="productSize">
             <option value="">Select Size</option>
-            <option value="">XXL</option>
-            <option value="">XL</option>
-            <option value="">Large</option>
-            <option value="">Medium</option>
-            <option value="">Small</option>
+            <option value="XXL">XXL</option>
+            <option value="XL">XL</option>
+            <option value="Large">Large</option>
+            <option value="Medium">Medium</option>
+            <option value="Small">Small</option>
           </select>
           <input type="number" value="1" />
           <a href="" class="btn">Add to Cart</a>
-          <h3>Product Details<i class="fa fa-indent"></i></h3>
+          <h3>Product Details <i class="fa fa-indent"></i></h3>
           <br />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nemo
-            nam magnam rerum sunt explicabo! Distinctio ipsam doloremque nostrum
-            ipsum?
-          </p>
+          <!-- Dynamic Product Description -->
+          <p id="productDescription"></p>
         </div>
       </div>
     </div>
 
-    <!-- Title -->
+    <!-- Related Products Section (Unchanged) -->
     <div class="small-container">
       <div class="row row-2">
         <h2>Related Products</h2>
@@ -99,8 +87,7 @@
       </div>
     </div>
 
-    <!-- Similar Products -->
-
+    <!-- Similar Products (Unchanged) -->
     <div class="small-container">
       <div class="row">
         <div class="col-4">
@@ -115,7 +102,6 @@
           </div>
           <p>$50.00</p>
         </div>
-
         <div class="col-4">
           <img src="assets/img/product-10.jpg" alt="" />
           <h4>Red Printed T-shirt</h4>
@@ -128,7 +114,6 @@
           </div>
           <p>$50.00</p>
         </div>
-
         <div class="col-4">
           <img src="./assets/img/product-11.jpg" alt="" />
           <h4>Red Printed T-shirt</h4>
@@ -156,7 +141,7 @@
       </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer (Unchanged) -->
     <div class="footer">
       <div class="container">
         <div class="row">
@@ -187,7 +172,6 @@
               <li>Join Affiliate</li>
             </ul>
           </div>
-
           <div class="footer-col-4">
             <h3>Follow us</h3>
             <ul>
@@ -199,13 +183,16 @@
           </div>
         </div>
         <hr />
-        <p class="copyright" id="copyright-text">Copyright 2020 - introidx</p>
+        <p class="copyright" id="copyright-text">
+          Copyright 2020 - introidx
+        </p>
       </div>
     </div>
 
-    <!-- scripts -->
+    <!-- Scripts -->
     <script src="assets/js/gallery.js"></script>
-    <!-- JS for Toggle menu -->
     <script src="assets/js/toggleMenu.js"></script>
+    <!-- Product details script: Fetches product data immediately -->
+    <script src="public/assets/js/product-details.js"></script>
   </body>
 </html>
