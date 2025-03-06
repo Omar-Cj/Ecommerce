@@ -24,7 +24,9 @@ export default defineConfig({
       // Define multiple entry points for your multi-page app
       input: {
         main: resolve(__dirname, 'index.html'),
-        admin: resolve(__dirname, 'admin/index.html')
+        admin: resolve(__dirname, 'admin/index.html'),
+        products: resolve(__dirname, 'products.html'),
+        productDetails: resolve(__dirname, 'product-details.html')
       }
     }
   }
