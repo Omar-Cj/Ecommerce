@@ -46,7 +46,8 @@ fetch(
   .then((data) => {
     const container = document.getElementById("fashion-products");
     container.innerHTML = "";
-    data.results.forEach((product) => {
+    // Limit the products to the first 8 items using slice(0, 8)
+    data.results.slice(0, 8).forEach((product) => {
       const imageSrc =
         product.images && product.images.length > 0
           ? product.images[0].image
